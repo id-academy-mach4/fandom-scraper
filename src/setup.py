@@ -9,6 +9,7 @@ import sqlite3
 import json
 import sys
 from pathlib import Path
+import string
 
 _base_url = "https://" + _fandom + ".fandom.com"
 _list_url = "/wiki/Special:AllPages"
@@ -43,3 +44,13 @@ with open(_SWCP, "r") as _cache_file_object_read:
     url_get_function(link_item["link"])
 
   with open(_SWCP, "w") as _cache_file_object_write: json.dump(_cache, _cache_file_object_write)
+
+  wordsNotToUse = ["of", "the", "a", "when", "it", "if", "are", "so", "why", "how", "do", "to", "should", "i", "?", "!",
+                   ".", ","]
+
+  def findKeywords(startingString):
+    i = startingString.lower().translate(str.maketrans('', '', string.punctuation))
+    for word in wordsNotToUse:
+      i = i.replace(word + " ", "")
+
+    return i
