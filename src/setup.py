@@ -1,3 +1,7 @@
+_fandom = "animalcrossing"
+# _fandom = "hypixel-skyblock"
+# _fandom = "celestegame"
+
 import requests as req
 from bs4 import BeautifulSoup as bs
 import pandas as pan
@@ -6,7 +10,7 @@ import json
 import sys
 from pathlib import Path
 
-_base_url = "https://animalcrossing.fandom.com"
+_base_url = "https://" + _fandom + ".fandom.com"
 _list_url = "/wiki/Special:AllPages"
 
 _SWCP = Path("../data/_saved_web_cache.json")
