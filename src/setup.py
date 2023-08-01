@@ -1,6 +1,7 @@
 _fandom = "animalcrossing"
 # _fandom = "hypixel-skyblock"
 # _fandom = "celestegame"
+# _fandom = "rlcraft"
 
 import requests as req
 from bs4 import BeautifulSoup as bs
