@@ -54,12 +54,3 @@ with open(_SWCP, "r") as _cache_file_object_read:
       i = i.replace(word + " ", "")
 
     return i
-
-  wordsNotToUse = ["of", "the", "a", "when", "it", "if", "are", "so", "why", "how", "do", "to", "should", "i", "game"]
-
-  def findKeywords(startingString):
-    i = startingString.lower().translate(str.maketrans('', '', string.punctuation))
-    for word in wordsNotToUse:
-      i = i.replace(word + " ", "")
-
-    return i
