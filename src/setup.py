@@ -9,7 +9,7 @@ from pathlib import Path
 _base_url = "https://animalcrossing.fandom.com"
 _list_url = "/wiki/Special:AllPages"
 
-_SWCP = Path("./_saved_web_cache.json")
+_SWCP = Path("../data/_saved_web_cache.json")
 if(_SWCP.is_file() == False):
   with open(_SWCP, "w") as _cache_file_object_write: json.dump({}, _cache_file_object_write)
 
