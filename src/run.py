@@ -10,7 +10,7 @@ def findKeywords(starting_string):
   global words_not_to_use
   i = starting_string.lower().translate(str.maketrans('', '', string.punctuation))
   for word in words_not_to_use:
-    i = i.replace(word + " ", "").replace_first("celeste", "celestegame", 1).replace("hypixel", "hypixel-skyblock", 1).replace("hypixel-skyblock skyblock", "hypixel-skyblock", 1)
+    i = i.replace(word + " ", "").replace("celeste", "celestegame", 1).replace("hypixel", "hypixel-skyblock", 1).replace("hypixel-skyblock skyblock", "hypixel-skyblock", 1)
   return i
 
 def promptUser():
