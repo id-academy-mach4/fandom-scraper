@@ -1,3 +1,5 @@
+from bs4 import BeautifulSoup
+
 link = input("Enter the link to the first \"All Pages\" webpage on your Fandom website:")
 header = link[:link.find('/wiki/')]
 all_pages_links = [link]
