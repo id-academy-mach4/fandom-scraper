@@ -10,5 +10,3 @@ def getFandomVariable(trimString):
     return fandom
   else:
     print("We couldn't figure out what fandom you are trying to access! Try again.")
-
-  
