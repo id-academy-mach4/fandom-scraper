@@ -1,7 +1,7 @@
-# _fandom = "animalcrossing"
-# _fandom = "hypixel-skyblock"
-_fandom = "celestegame"
-# _fandom = "rlcraft"
+# fandom = "animalcrossing"
+# fandom = "hypixel-skyblock"
+fandom = "celestegame"
+# fandom = "rlcraft"
 
 import requests as req
 from bs4 import BeautifulSoup as bs
@@ -12,10 +12,10 @@ from pathlib import Path
 import string
 import os
 
-_base_url = "https://" + _fandom + ".fandom.com"
+_base_url = "https://" + fandom + ".fandom.com"
 _list_url = "/wiki/Special:AllPages"
 
-_SWCP = Path(os.path.abspath("data/" + _fandom + ".json"))
+_SWCP = Path(os.path.abspath("data/" + fandom + ".json"))
 if(_SWCP.is_file() == False):
   with open(_SWCP, "w") as _cache_file_object_write: json.dump({}, _cache_file_object_write)
 
