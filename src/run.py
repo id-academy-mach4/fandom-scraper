@@ -8,9 +8,9 @@ words_not_to_use = ["of", "the", "a", "when", "it", "if", "are", "so", "why", "h
 # Function to parse a string and remove punctuation and words not to use.
 def findKeywords(starting_string):
   global words_not_to_use
-  i = starting_string.lower().translate(str.maketrans('', '', string.punctuation))
+  i = starting_string.lower().translate(str.maketrans('', '', string.punctuation)).replace("celeste", "celestegame", 1).replace("hypixel", "hypixel-skyblock", 1).replace("hypixel-skyblock skyblock", "hypixel-skyblock", 1)
   for word in words_not_to_use:
-    i = i.replace(word + " ", "").replace("celeste", "celestegame", 1).replace("hypixel", "hypixel-skyblock", 1).replace("hypixel-skyblock skyblock", "hypixel-skyblock", 1)
+    i = i.replace(word + " ", "")
   return i
 
 def promptUser():
