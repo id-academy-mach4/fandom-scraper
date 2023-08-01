@@ -1,8 +1,8 @@
-link = "https://animalcrossing.fandom.com/wiki/Special:AllPages"
-
+link = input("Enter the link to the first \"All Pages\" webpage on your Fandom website:")
+header = link[:link.find('/wiki/')]
 all_pages_links = [link]
 
-def get_next_link(link):
+def get_next_link(link, header):
   page = requests.get(link)
 
   soup = BeautifulSoup(page.content,'html.parser')
@@ -16,15 +16,15 @@ def get_next_link(link):
     if "Next page" in link.get_text():
       link_to_string = str(link)
       start_of_link = link_to_string.find(r'href="/wiki')
-      link_formatted = "https://animalcrossing.fandom.com" + link_to_string[start_of_link + 6:]
+      link_formatted = header + link_to_string[start_of_link + 6:]
       link_formatted = link_formatted[:link_formatted.find("\"")]
 
       all_pages_links.append(link_formatted)
 
-      get_next_link(link_formatted)
+      get_next_link(link_formatted, header)
 
 
-get_next_link(link)
+get_next_link(link, header)
 
 
 links_new = []
@@ -41,7 +41,7 @@ for ap_link in all_pages_links:
     link_to_string = str(link)
     is_link = link_to_string.find(r'href="/wiki')
     if is_link != -1:
-      link_formatted = "https://animalcrossing.fandom.com" + link_to_string[is_link + 6:]
+      link_formatted = header + link_to_string[is_link + 6:]
       link_formatted = link_formatted[:link_formatted.find("\"")]
 
       if(link_formatted not in links_new) and ("/UI" not in link_formatted):
