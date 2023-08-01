@@ -15,7 +15,7 @@ def findKeywords(starting_string):
   return i
 
 def promptUser():
-  userInput = input("What would you like to know? Please frame your response in the form of a question, with the name of the fandom in the question.\nFor example, \"What is the best way to collect strawberries in Celeste?\" (You can quit with "q".)\n\n")
+  userInput = input("What would you like to know? Please frame your response in the form of a question, with the name of the fandom in the question.\nFor example, \"What is the best way to collect strawberries in Celeste?\" (You can quit with \"q\".)\n\n")
   print("")
   # In case they want to quit
   if(userInput.lower() == "q") return None
