@@ -2,13 +2,10 @@ print(len(text))
 vocab = sorted(set(text))
 print(vocab)
 print(len(vocab))
-example_texts = ['The quick brown fox jumps over the lazy dog.', 'We\'re no strangers to love.']
-chars = tf.strings.unicode_split(example_texts, input_encoding='UTF-8')
-print(chars)
+chars = text
 ids_from_chars = tf.keras.layers.StringLookup(
     vocabulary=list(vocab), mask_token=None)
 ids = ids_from_chars(chars)
-print(ids)
 chars_from_ids = tf.keras.layers.StringLookup(
     vocabulary=ids_from_chars.get_vocabulary(), invert=True, mask_token=None)
 
