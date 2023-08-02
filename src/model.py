@@ -19,7 +19,6 @@ print(text_from_ids(ids))
 all_ids = ids_from_chars(tf.strings.unicode_split(text, 'UTF-8'))
 # Add your print statement here:
 print(all_ids)
-3. Add `all_ids` to the parentheses to use tensorflow to create a dataset.
 ids_dataset = tf.data.Dataset.from_tensor_slices(all_ids)
 # Fill in the take function below
 for ids in ids_dataset.take(500):
