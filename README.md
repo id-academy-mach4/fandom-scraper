@@ -1,4 +1,4 @@
-<a href="idtech.com"><b>iD Academies, Summer 2023</b></a>
+<a href="https://www.idtech.com/academies"><b>iD Academies, Summer 2023</b></a>
 
 # Fandom Wiki Chatbot (Mach4)
 Welcome to the iD Academy Mach4 project for the summer of 2023! This project aims to create a chatbot that provides comprehensive information about your favorite fandom using web scraping and a Recursive Neural Network (RNN) algorithm. The chatbot will be able to answer your queries about the fandom, ensuring a spoiler-free experience.
