@@ -1,7 +1,13 @@
-print(len(text))
+import tensorflow as tf
+import numpy as np
+import os
+import time
+
+path_to_file = ('data/celestegame.txt')
+text = open(path_to_file, 'rb').read().decode(encoding='utf-8')
+print(text[:250])
+
 vocab = sorted(set(text))
-print(vocab)
-print(len(vocab))
 chars = text
 ids_from_chars = tf.keras.layers.StringLookup(
     vocabulary=list(vocab), mask_token=None)
@@ -13,7 +19,7 @@ chars = chars_from_ids(ids)
 # Add your print statement below.
 print(chars)
 def text_from_ids(ids):
-    return tf.strings.reduce_join(chars_from_ids(ids), axis=-1)
+    return tf.strings.reduce_join(chars_from_ids(ids))
 
 print(text_from_ids(ids))
 all_ids = ids_from_chars(tf.strings.unicode_split(text, 'UTF-8'))
