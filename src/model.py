@@ -177,18 +177,20 @@ class OneStep(tf.keras.Model):
     # Return the predicted chars and states
     return predicted_chars, states
 
-# Generate a "one step" model using this class and your model from above
-one_step_model = OneStep(model, chars_from_ids, ids_from_chars)
-# Initialize the states to None
-states = None
-# Add to or change the string in the square brackets
-next_char = tf.constant([keyword])
-result = [next_char]
-# Add a for loop for the amount of characters (1000 is a good number to start with)
-for n in range (1000):
-  # Leave this line untouched
-  next_char, states =  one_step_model.generate_one_step(next_char, states=states)
-  # Append next_char to result
-  result.append(next_char)
-result = tf.strings.join(result)
-print(result[0].numpy().decode('utf-8'), '\n\n' + '_'*80)
+
+def summarize_article(keyword):
+    # Generate a "one step" model using this class and your model from above
+    one_step_model = OneStep(model, chars_from_ids, ids_from_chars)
+    # Initialize the states to None
+    states = None
+    # Add to or change the string in the square brackets
+    next_char = tf.constant([keyword])
+    result = [next_char]
+    # Add a for loop for the amount of characters (1000 is a good number to start with)
+    for n in range (1000):
+      # Leave this line untouched
+      next_char, states =  one_step_model.generate_one_step(next_char, states=states)
+      # Append next_char to result
+      result.append(next_char)
+    result = tf.strings.join(result)
+    print(result[0].numpy().decode('utf-8'), '\n\n' + '_'*80)
