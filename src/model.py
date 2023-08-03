@@ -194,3 +194,11 @@ def summarize_article(keyword):
       result.append(next_char)
     result = tf.strings.join(result)
     print(result[0].numpy().decode('utf-8'), '\n\n' + '_'*80)
+
+# save the model
+def save_model(model):
+    tf.saved_model.save(model, 'saved_model')
+
+def reload_saved_model(): # set the model equal to the saved model on the file 'one_step'. Run this before running summarize_article()
+    one_step_model = tf.saved_model.reload('saved_model')
+    
