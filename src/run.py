@@ -19,7 +19,7 @@ def promptUser():
   # In case they want to quit
   if(userInput.lower() == "q"): return None
   keywords = findKeywords(userInput)
-  print("DEBUG_KEYWORDS", keywords)
+  model.summarize_article(keywords)
   return False
 
 prompting = True
