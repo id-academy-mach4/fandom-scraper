@@ -3,7 +3,7 @@ fandomList = ["celeste", "hypixel", "hypixelskyblock", "animalcrossing", "animal
 def getFandomVariable(trimString):
   fandom = ""
   for i in fandomList:
-    if i == trimString:
+    if i in trimString:
       fandom = i
       break
   if fandom != "":
