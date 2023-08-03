@@ -38,6 +38,7 @@ while prompting:
       print(">> RESULT\n")
       print(x)
       x = None
+      answer = input("Do you have another question?\n")
       if(answer.lower() == "y"):
         prompting = True
       else:
